@@ -1,0 +1,456 @@
+/* Temel sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar stil */
+.navbar {
+    background-color: #444; /* Koyu arka plan rengi */
+    color: #fff; /* Beyaz metin rengi */
+    padding: 10px 20px; /* Üst ve alt boşluk */
+}
+
+.navbar-container {
+   background-color: #444;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: flex-end; /* İçeriği sağa hizala */
+    align-items: center;
+    margin-left: 250px; /* Sol panel genişliğine göre boşluk bırak */
+    z-index: 101; /* Navbar'ın üstte kalması için z-index */
+    position: relative;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 40px; /* Logo genişliği */
+    height: auto; /* Logo yüksekliğini orantılı tutar */
+}
+
+.navbar-center {
+    flex-grow: 1; /* Arama çubuğu ortada ve genişlemesine izin verir */
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-search input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    width: 200px; /* Arama çubuğu genişliği */
+}
+
+.navbar-search button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #0077b5; /* LinkedIn'in mavi rengi */
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+  
+.bol {
+    background-color: #0073b1;
+    padding: 15px;
+}
+
+
+.navbar-search button:hover {
+    background-color: #005582; /* Daha koyu mavi hover efekti */
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #fff; /* Beyaz metin rengi */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu a .menu-icon {
+    width: 20px; /* Menü ikon genişliği */
+    height: auto; /* Menü ikon yüksekliğini orantılı tutar */
+    margin-right: 8px; /* İkon ve metin arasındaki boşluk */
+}
+
+.navbar-menu a:hover {
+    text-decoration: underline; /* Hover efekti */
+}
+
+.card-section {
+    padding: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column; /* Kartları dikeyde hizalar */
+    align-items: center; /* Kartları ortalar */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    margin: 10px 0; /* Kartlar arasında dikey boşluk */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #0077b5; /* LinkedIn'in mavi rengi */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #e1e1e1;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #0077b5; /* LinkedIn'in mavi rengi */
+    font-weight: bold;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    
+    padding: 10px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: none; /* Menü simgesi için örnek */
+}
+
+.main-content {
+    padding: 20px;
+    flex: 1;
+    }
+
+    .right-panel {
+        position: absolute; /* Paneli sağ üst köşeye yerleştirmek için */
+        top: 100px;
+        right: 20px;
+        width: 300px;
+        background-color: rgb(219, 218, 218);
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        padding: 20px;
+        border-radius: 8px;
+        overflow-y: auto;
+    }
+    
+    .suggestions h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        
+    }
+    
+    .suggestion {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .suggestion img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .suggestion div {
+        flex: 1;
+    }
+    
+    .suggestion h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+    
+    .suggestion p {
+        margin: 5px 0;
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .suggestion button {
+        background-color: #0073b1;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    
+    .suggestion button:hover {
+        background-color: #005582;
+    }
+    
+    /* Navbar */
+    .navbar {
+       
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar h1 {
+        margin: 0;
+        font-size: 18px;
+    }
+    
+    .menu-toggle {
+        display: none; /* Menü simgesi için örnek */
+    }
+    
+    /* İçerik Alanı */
+    .main-content {
+        padding: 20px;
+        flex: 1;
+    }
+    .sidebar {
+    width: 250px; /* Sol panel genişliği */
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    position: fixed; /* Sol paneli sabitlemek için */
+    top: 0; /* Üstten sıfır uzaklıkta */
+    left: 0; /* Soldan sıfır uzaklıkta */
+    height: 100vh; /* Tam yükseklikte */
+}
+
+/* Profil Panel */
+.profile-panel {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile h2, .profile p {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+}
+
+/* Hashtag Panel */
+.hashtag-panel {
+    background-color:rgb(92, 91, 91);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hashtag-panel h2 {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hashtag-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hashtag-panel li {
+    margin-bottom: 5px;
+}
+
+.hashtag-panel a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.hashtag-panel a:hover {
+    text-decoration: underline;
+}
+
+/* Menü */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+.sidebar {
+    width: 250px; /* Sol panel genişliği */
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    position: fixed; /* Sol paneli sabitlemek için */
+    top: 0; /* Üstten sıfır uzaklıkta */
+    left: 0; /* Soldan sıfır uzaklıkta */
+    height: 100vh; /* Tam yükseklikte */
+    z-index: 100; /* Navbar'ın altında kalması için z-index */
+}
+
+/* Profil Panel */
+.profile-panel {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile h2, .profile p {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+}
+
+/* Hashtag Panel */
+.hashtag-panel {
+    
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hashtag-panel h2 {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hashtag-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hashtag-panel li {
+    margin-bottom: 5px;
+}
+
+.hashtag-panel a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.hashtag-panel a:hover {
+    text-decoration: underline;
+}
+
